@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<head>
+    <title>History</title>
+</head>
+<body>
+    <button id="approved">Approved</button>
+    </br>
+    <button id="rejected">Rejected</button>
+    </br>
+    <a href="/"+user.dept+"/Staff"+user._id+"/Dashboard"></a>
+    </br>
+    <div id="approved-list">
+        <%for(var i=0;i<user.leaves.length;i++){%>
+        <% if(user.leaves[i].approved == 1){ %>
+        <li>
+            <%= user.leaves[i].doa %>
+            <%= user.leaves[i].nature %>
+            <%= user.leaves[i].from %>
+            <%= user.leaves[i].to %>
+        </li>
+        <% } } %>
+        
+    </div>
+        <div id="rejected-list">
+        <%for(var i=0;i<user.leaves.length;i++){%>
+        <% if(user.leaves[i].approved == 2){ %>
+        <li>
+            <%= user.leaves[i].doa %>
+            <%= user.leaves[i].nature %>
+            <%= user.leaves[i].from %>
+            <%= user.leaves[i].to %>
+        </li>
+        <% } } %>
+    </div>
+</body>

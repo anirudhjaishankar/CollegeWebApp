@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign up</title>
+    <link rel="stylesheet" type="text/css" href="signup.css">
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Expanded" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pridi" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+</head>
+<body>
+    <div class="split left">
+        <div class="centered">
+            <!-- LOGO -->
+            <h2>R.M.K College Of Engineering And Technology</h2>
+            <img id="logo" src="rmkcetlogo.png">
+
+        </div>
+    </div>
+
+    <div class="split right">
+        <div>
+
+
+
+            <form id="form" action ="/Admin/signup" method="POST">
+                <div class="container">
+                    
+                    <label for="sname" id="user[name]"><b>NAME</b></label>
+                    <input type="text" name="user[name]" autocomplete="off" required>
+                    </br>
+                    <label for="regid" id="user[regID]"><b>REGISTERATION NUMBER</b></label>
+                    <input type="text" name="user[regID]" autocomplete="off" required>
+                    </br>
+                    <label for="psw" id="psw"><b>PASSWORD</b></label>
+                    <input id="pass1" type="password" autocomplete="off" name="psw" required>
+                    </br>
+                    <label for="rpsw" id="user[password]"><b>RETYPE PASSWORD</b></label>
+                    <input id="pass2" name="user[password]" autocomplete="off" type="password" required>
+                    </br>
+                    <label for="regno" id="user[dept]"><b>DEPARTMENT</b></label>
+                    </br>
+                    <div class="rad">
+                        <label>CSE</label>
+                        <input type="radio" name="user[dept]" value="CSE" required>
+                        <label>EEE</label>
+                        <input type="radio" name="user[dept]" value="EEE" required>
+                        <label>ECE</label>
+                        <input type="radio" name="user[dept]" value="ECE" required>
+                        <label>MECH</label>
+                        <input type="radio" name="user[dept]" value="MECH" required>
+                    </div>
+                    </br>
+                    <label for="regno" id="user[desig]"><b>DESIGNATION</b></label>
+                    </br>
+                    <div class="rad">
+                        <label>Head of the Department</label>
+                        <input type="radio" name="user[desig]" value="HOD" required>
+                        <label>Staff</label>
+                        <input type="radio" name="user[desig]" value="Staff" required>
+                    </div>
+                    </br>
+            </div>
+        </form>
+        <button id = "submit">Submit</button>
+
+        </div>
+    </div>
+    <script>
+            var submit = document.getElementById("submit");
+            submit.addEventListener("click",function(){
+                var pass1 = document.getElementById("pass1");
+                var pass2 = document.getElementById("pass2");
+                if(pass1.value == pass2.value){
+                    document.getElementById("form").submit();
+                }
+                else{
+                    alert("passwords do not match try again");
+                }
+            });
+
+
+
+            var inputList = document.querySelectorAll("input");
+            // TO ADD COLOR CHANGE TO LABEL
+            for(var i = 0;i<inputList.length;i++){
+                inputList[i].addEventListener("focus",function(){
+                    document.getElementById(this.name).style.color = "rgb(0,39,41)";
+                });
+                inputList[i].addEventListener("focusout",function(){
+                    document.getElementById(this.name).style.color = "rgb(153,157,176)";
+                });
+            }
+            document.querySelector("select").addEventListener("focus",function(){
+                document.getElementById(this.name).style.color = "rgb(0,39,41)";
+            });
+            document.querySelector("select").addEventListener("focusout",function(){
+                document.getElementById(this.name).style.color = "rgb(153,157,176)";
+            });
+        </script>
+</body>
+</html>

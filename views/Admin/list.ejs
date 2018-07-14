@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Records</title>
+    <link rel="stylesheet" type="text/css" href="list.css">
+  </head>
+  <body>
+      <h1>List of users</h1>
+      <a href="/Admin/signup">Add Users</a>
+      <% for(var i = 0;i<Users.length;i++){ if(Users[i].name != "Admin"){ %>
+      <div>
+      <li><%= Users[i].name%>-<%= Users[i].regID%>-<%= Users[i].desig; %>-<%= Users[i]._id %><a href = "/Admin/<%= Users[i]._id %>/edit">Edit</a></li>
+      <form action = "/Admin/<%= Users[i]._id %>?_method=DELETE" method="POST">
+          <button>Delete</button>
+      </form>
+      </div>
+      <% }}%>
+   </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave application form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.1.0/darkly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abhaya+Libre">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Adamina">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Advent+Pro">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aladin">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiko">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md">
+        <div class="container-fluid"><a class="navbar-brand" href="#" style="font-size:25px;">RMKCET</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <% var a = "/"+ user.dept +"/Staff/"+user._id+"/Dashboard"%>
+
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href= <%= a %> style="font-size:17px;"><i class="fa fa-inbox" style="font-size:27px;"></i>&nbsp; DASHBOARD</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/" style="font-size:20px;"><i class="fa fa-power-off" style="font-size:22px;"></i>&nbsp; LOGOUT</a></li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+    <div class="container" style="width:352px;background-color:#333333;height:566px;margin-top:-10px;padding-top:38px;">
+        <h1>Apply leave<%console.log(user)%></h1>
+        <form method="POST" action="/Staff/<%=user._id%>/leave">
+            <div class="form-group" style="margin-top:41px;">
+                
+                <label style="font-size:24px;">
+                    Nature &nbsp;of leave
+                </label>
+                
+                <input class="form-control" name="leave[nature]" type="text" required>
+                
+                <label style="font-size:24px;">
+                    Purpose
+                </label>
+                
+                <input class="form-control" name="leave[purpose]" type="text" required>
+                
+                <label style="font-size:24px;">
+                    From
+                </label>
+                
+                <input class="form-control" name="leave[from]" type="date" required>
+                
+                <label style="font-size:24px;">
+                    To
+                </label>
+                
+                <input class="form-control" name="leave[to]" type="date" required>
+                
+                <button class="btn btn-success btn-lg" type="submit" style="font-size:18px;margin-top:62px;margin-right:0px;margin-left:105px;">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+</body>
+
+</html>
